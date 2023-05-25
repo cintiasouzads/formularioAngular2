@@ -1,0 +1,41 @@
+<h1>Detalhes do usuário</h1>
+<input type="nome" name="nome" placeholder="insira seu nome" [(ngModel)]="nome">
+<br>
+<br>
+<input type="email" name="email" id="" placeholder="insira seu email" [(ngModel)]="email">
+<br>
+<br>
+<textarea name="adress" name="adress" cols="30" rows="10" placeholder="endereço" [(ngModel)]="adress"></textarea>
+<br>
+<br>
+<button (click)="salvar()">Salvar</button>
+
+<div *ngIf="itens.length > 0; else noData">
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>nome</th>
+      <th>email</th>
+      <th>adress</th>
+      <th>action</th>
+    </tr>
+  </thead>
+
+  <tbody *ngFor="let item of itens; let i = index">
+    <tr>
+      <td>{{i + 1}}</td>
+      <td>{{nome | json}}</td>
+      <td>{{email | json}}</td>
+      <td>{{adress | json}}</td>
+      <td ><button (click)="onDelete(i)">Deletar</button></td>
+    
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+<ng-template #noData>
+  <h4>sem dados</h4>
+  </ng-template>
