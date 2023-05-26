@@ -4,15 +4,18 @@
 
     <div class="form-area">
       <label>Nome Completo</label>
-<input type="nome" name="nome" placeholder="insira seu nome" [(ngModel)]="nome">
+<input type="nome" name="nome" placeholder="insira seu nome" [ngClass]="{'is-invalid': nome.touched && nome.invalid}">
     </div>
 
     <div class="form-area">
-<input type="email" name="email" id="" placeholder="insira seu email" [(ngModel)]="email">
+      <label>Email</label>
+<input type="email" name="email" placeholder="insira seu email" >
     </div>
-    <div>
-<textarea name="adress" name="adress" cols="30" rows="10" placeholder="endereço" [(ngModel)]="adress"></textarea>
+
+    <div class="form-area">
+      <label>Adress</label>
+<textarea name="adress" name="adress" cols="30" rows="10" placeholder="endereço" ></textarea>
     </div>
-<button (click)="salvar()">Salvar</button>
+<button type="submit" class="btn btn-primary">Salvar</button>
   </form>
 </div>

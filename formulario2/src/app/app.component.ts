@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -20,8 +21,9 @@ adress:String='';
     this.itens.push(this.id)
   }
 
-  onDelete(index: number){
-    this.itens.splice(index, 1);
+  onSubmit(f:NgForm){
+    console.log(f.value)
   }
+
 
 }
