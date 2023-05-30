@@ -8,18 +8,12 @@ import { NgForm } from '@angular/forms';
 })
 export class AppComponent {
 id:string='';
-nome:String='';
-email:String='';
-adress:String='';
+nome:string='';
+email:string='';
+adress:string='';
 
   itens:Array<any>=[];
 
-
-
-
-  salvar(){
-    this.itens.push(this.id)
-  }
 
   onSubmit(f:NgForm){
     console.log(f.value)

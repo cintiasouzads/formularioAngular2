@@ -1,21 +1,30 @@
 <h1>Detalhes do usuário</h1>
-<div class="form-area">
+
   <form #f="ngForm" (ngSubmit)="onSubmit(f)">
 
-    <div class="form-area">
+    <div class="form-group">
       <label>Nome Completo</label>
-<input type="nome" name="nome" placeholder="insira seu nome" [ngClass]="{'is-invalid': nome.touched && nome.invalid}">
+  <input type="text" name="fullName" placeholder="insira seu nome" class="form-control" ngModel #fullName='ngModel' [ngClass]="{'is-invalid' : fullName.touched && fullName.invalid}" required minlength="5" maxlength="20">
     </div>
+    <div class="alert-danger" *ngIf="fullName.invalid">
+      <div *ngIf='fullName.touched && fullName.invalid'>Insira o nome completo</div>
+    </div>
+    
 
-    <div class="form-area">
+    <div class="form-group">
       <label>Email</label>
-<input type="email" name="email" placeholder="insira seu email" >
+        <input type="email" name="email" placeholder="insira seu email" class="form-control" ngModel #email='ngModel' [ngClass]="{'is-invalid' : email.touched && email.invalid}" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+    </div>
+    <div class="alert-danger" *ngIf="email.invalid">
+      <div *ngIf='email.touched && email.invalid'>Insira o email</div>
     </div>
 
-    <div class="form-area">
+    <div class="form-group">
       <label>Adress</label>
-<textarea name="adress" name="adress" cols="30" rows="10" placeholder="endereço" ></textarea>
+<textarea name="adress" name="adress" cols="30" rows="10" placeholder="endereço" required class="form-control" ngModel #adress='ngModel' [ngClass]="{'is-invalid' : adress.touched && adress.invalid}" ></textarea>
     </div>
-<button type="submit" class="btn btn-primary">Salvar</button>
+    <div class="alert-danger" *ngIf="email.invalid">
+      <div *ngIf='adress.touched && adress.invalid'>insira endereço</div>
+    </div>
+<button type="submit" class="btn btn-primary" [disabled]="f.invalid">Salvar</button>
   </form>
-</div>
