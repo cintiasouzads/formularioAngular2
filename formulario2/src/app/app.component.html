@@ -1,4 +1,4 @@
-<h1>Detalhes do usuário</h1>
+<h2>Fale conosco</h2>
 
   <form #f="ngForm" (ngSubmit)="onSubmit(f)">
 
@@ -16,15 +16,15 @@
         <input type="email" name="email" placeholder="insira seu email" class="form-control" ngModel #email='ngModel' [ngClass]="{'is-invalid' : email.touched && email.invalid}" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
     </div>
     <div class="alert-danger" *ngIf="email.invalid">
-      <div *ngIf='email.touched && email.invalid'>Insira o email</div>
+      <div *ngIf='email.touched && email.invalid'>Dados incorretos</div>
     </div>
 
     <div class="form-group">
-      <label>Adress</label>
-<textarea name="adress" name="adress" cols="30" rows="10" placeholder="endereço" required class="form-control" ngModel #adress='ngModel' [ngClass]="{'is-invalid' : adress.touched && adress.invalid}" ></textarea>
+      <label>Deixe sua mensagem</label>
+<textarea name="adress" name="adress" cols="30" rows="10" placeholder="deixe sua mensagem" required class="form-control" ngModel #adress='ngModel' [ngClass]="{'is-invalid' : adress.touched && adress.invalid}" ></textarea>
     </div>
     <div class="alert-danger" *ngIf="email.invalid">
-      <div *ngIf='adress.touched && adress.invalid'>insira endereço</div>
+      <div *ngIf='adress.touched && adress.invalid'>insira a mensagem</div>
     </div>
-<button type="submit" class="btn btn-primary" [disabled]="f.invalid">Salvar</button>
+<button type="submit" class="btn btn-primary" [disabled]="f.invalid">Enviar</button>
   </form>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormControl, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -18,6 +18,8 @@ adress:string='';
   onSubmit(f:NgForm){
     console.log(f.value)
   }
+
+  
 
 
 }
