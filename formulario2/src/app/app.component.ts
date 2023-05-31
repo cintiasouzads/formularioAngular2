@@ -7,19 +7,16 @@ import { FormControl, NgForm } from '@angular/forms';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-id:string='';
-nome:string='';
-email:string='';
-adress:string='';
 
-  itens:Array<any>=[];
 
 
   onSubmit(f:NgForm){
-    console.log(f.value)
+    console.log(f.value);
   }
 
   
-
+  getValue(f:FormControl){
+    console.log(f);
+  }
 
 }
